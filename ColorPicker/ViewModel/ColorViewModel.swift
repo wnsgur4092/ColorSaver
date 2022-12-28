@@ -12,9 +12,9 @@ class ColorViewModel: ObservableObject {
     
     //MARK: - NEW COLOR PROPERTIES
     @Published var openEditColor : Bool = false
-    @Published var colorCode : String = ""
-    @Published var preferredName : String = ""
-    
+//    @Published var colorCode : String = ""
+//    @Published var preferredName : String = ""
+//    
     
 //    @Published var color
     @Published var drawSwiftUIColor: Color = Color.red

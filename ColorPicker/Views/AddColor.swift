@@ -9,15 +9,11 @@ import SwiftUI
 
 struct AddColor: View {
     //MARK: - PROPERTIES
+    @Environment(\.managedObjectContext) private var viewContext
+    
     @EnvironmentObject var colorVM : ColorViewModel
     @Environment(\.self) var env
-    
-    @State private var drawSwiftUIColor: Color = Color.red
-    @State private var drawOpacity: Double = 1.0
-    @State private var drawUIColor: UIColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
-    @State private var drawHexNumber: String = "#FF0000"
-//    @State private var preferredName : String = ""
-    
+
     //MARK: - BODY
     var body: some View {
         VStack{
@@ -56,7 +52,8 @@ struct AddColor: View {
             }
             //SAVE BUTTON
             Button {
-                
+                print(colorVM.drawHexNumber)
+                addItem()
             } label: {
                 Label {
                     Text("Save Color")
@@ -75,36 +72,31 @@ struct AddColor: View {
         .padding()
     }
     
-    
     //MARK: - FUNCTION
-    func getColorsFromPicker(pickerColor: Color) {
-        let colorString = "\(pickerColor)"
-        let colorArray: [String] = colorString.components(separatedBy: " ")
-
-        if colorArray.count > 1 {
-            var r: CGFloat = CGFloat((Float(colorArray[1]) ?? 1))
-            var g: CGFloat = CGFloat((Float(colorArray[2]) ?? 1))
-            var b: CGFloat = CGFloat((Float(colorArray[3]) ?? 1))
-            let alpha: CGFloat = CGFloat((Float(colorArray[4]) ?? 1))
-
-            if (r < 0.0) {r = 0.0}
-            if (g < 0.0) {g = 0.0}
-            if (b < 0.0) {b = 0.0}
-
-            if (r > 1.0) {r = 1.0}
-            if (g > 1.0) {g = 1.0}
-            if (b > 1.0) {b = 1.0}
-
-            // Update UIColor
-            drawUIColor = UIColor(red: r, green: g, blue: b, alpha: alpha)
-            // Update Opacity
-            drawOpacity = Double(alpha)
-
-            // Update hex
-            let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
-            drawHexNumber = String(format: "#%06X", rgb)
+    private func addItem(){
+        withAnimation {
+            let newItem = Item(context: viewContext)
+            newItem.timeStamp = Date()
+            let colorCode = colorVM.drawHexNumber
+            let pickedColor = colorVM.drawUIColor
+            newItem.red = Float(pickedColor.components.red)
+            newItem.blue = Float(pickedColor.components.blue)
+            newItem.green = Float(pickedColor.components.green)
+            newItem.alpha = Float(pickedColor.components.alpha)
+            newItem.hexNumber = colorCode
+            saveItem()
         }
     }
+    
+    private func saveItem(){
+        do {
+            try viewContext.save()
+        } catch{
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
 }
 
 
