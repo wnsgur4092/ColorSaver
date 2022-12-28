@@ -36,21 +36,20 @@ struct AddColor: View {
                 }
             
             Rectangle()
-                .foregroundColor(drawSwiftUIColor)
+                .foregroundColor(colorVM.drawSwiftUIColor)
                 .cornerRadius(20)
                 .frame(maxHeight: 300)
                 .padding()
             
             Form {
                 Section("Choosen Color") {
-                    ColorPicker("Select Color", selection: $drawSwiftUIColor, supportsOpacity: true)
-                        .onChange(of: drawSwiftUIColor) { newValue in
-                            getColorsFromPicker(pickerColor: newValue)
+                    ColorPicker("Select Color", selection: $colorVM.drawSwiftUIColor, supportsOpacity: true)
+                        .onChange(of: colorVM.drawSwiftUIColor) { newValue in colorVM.getColorsFromPicker(pickerColor: newValue)
                         }
                 }
                 
                 Section("Hexadecimal") {
-                    Text("\(drawHexNumber)").bold()
+                    Text("\(colorVM.drawHexNumber)").bold()
                 }
                 
                 
@@ -77,7 +76,7 @@ struct AddColor: View {
     }
     
     
-    //MARK: - FUNCTIOn
+    //MARK: - FUNCTION
     func getColorsFromPicker(pickerColor: Color) {
         let colorString = "\(pickerColor)"
         let colorArray: [String] = colorString.components(separatedBy: " ")
@@ -105,19 +104,6 @@ struct AddColor: View {
             let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
             drawHexNumber = String(format: "#%06X", rgb)
         }
-    }
-}
-
-//MARK: - EXTENSION
-extension UIColor {
-    var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
-        var red: CGFloat = 0
-        var green: CGFloat = 0
-        var blue: CGFloat = 0
-        var alpha: CGFloat = 0
-        
-        getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-        return (red, green, blue, alpha)
     }
 }
 
