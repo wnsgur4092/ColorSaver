@@ -17,6 +17,7 @@
 		BFB268FD2954930B007EF5B4 /* ColorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB268FC2954930B007EF5B4 /* ColorViewModel.swift */; };
 		BFB268FF29549415007EF5B4 /* AddColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB268FE29549415007EF5B4 /* AddColor.swift */; };
 		BFB26921295C2DE1007EF5B4 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB26920295C2DE1007EF5B4 /* Constant.swift */; };
+		BFB26926295C69EE007EF5B4 /* ColorValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB26925295C69EE007EF5B4 /* ColorValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		BFB268FC2954930B007EF5B4 /* ColorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewModel.swift; sourceTree = "<group>"; };
 		BFB268FE29549415007EF5B4 /* AddColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddColor.swift; sourceTree = "<group>"; };
 		BFB26920295C2DE1007EF5B4 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		BFB26925295C69EE007EF5B4 /* ColorValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		BFB268E22954637C007EF5B4 /* ColorPicker */ = {
 			isa = PBXGroup;
 			children = (
+				BFB26924295C69E7007EF5B4 /* Model */,
 				BFB268FB29549079007EF5B4 /* ViewModel */,
 				BFB268F629546D06007EF5B4 /* Views */,
 				BFB2691F295C2DD5007EF5B4 /* Utility */,
@@ -107,6 +110,14 @@
 				BFB26920295C2DE1007EF5B4 /* Constant.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		BFB26924295C69E7007EF5B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BFB26925295C69EE007EF5B4 /* ColorValue.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +192,7 @@
 			files = (
 				BFB268ED2954637D007EF5B4 /* Persistence.swift in Sources */,
 				BFB268FF29549415007EF5B4 /* AddColor.swift in Sources */,
+				BFB26926295C69EE007EF5B4 /* ColorValue.swift in Sources */,
 				BFB268FD2954930B007EF5B4 /* ColorViewModel.swift in Sources */,
 				BFB26921295C2DE1007EF5B4 /* Constant.swift in Sources */,
 				BFB268F02954637D007EF5B4 /* ColorPicker.xcdatamodeld in Sources */,

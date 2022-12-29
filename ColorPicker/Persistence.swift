@@ -14,7 +14,7 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        let exampleColor = UIColor(Color(.sRGB, red: 0.4, green: 0.3, blue: 0, opacity: 0))
+        let exampleColor = UIColor(Color(.sRGB, red: 0.4, green: 0.3, blue: 0))
         let colorCode = ColorViewModel().drawHexNumber
         for _ in 0..<10 {
             let newItem = Item(context: viewContext)
