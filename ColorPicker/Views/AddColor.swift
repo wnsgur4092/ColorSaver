@@ -79,6 +79,7 @@ struct AddColor: View {
         withAnimation {
             let newItem = Item(context: viewContext)
             newItem.timeStamp = Date()
+            newItem.id = UUID()
             let colorCode = colorVM.drawHexNumber
             let pickedColor = colorVM.drawUIColor
             newItem.red = Float(pickedColor.components.red)
@@ -87,12 +88,14 @@ struct AddColor: View {
             newItem.alpha = Float(pickedColor.components.alpha)
             newItem.hexNumber = colorCode
             saveItem()
+            print(newItem.id)
         }
     }
     
     private func saveItem(){
         do {
             try viewContext.save()
+            
         } catch{
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
