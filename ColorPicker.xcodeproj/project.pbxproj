@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF19C8582962C13000CBAE21 /* ColorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF19C8572962C13000CBAE21 /* ColorDetailView.swift */; };
 		BFB268E42954637C007EF5B4 /* ColorPickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB268E32954637C007EF5B4 /* ColorPickerApp.swift */; };
 		BFB268E62954637C007EF5B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB268E52954637C007EF5B4 /* ContentView.swift */; };
 		BFB268E82954637D007EF5B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB268E72954637D007EF5B4 /* Assets.xcassets */; };
@@ -18,9 +19,11 @@
 		BFB268FF29549415007EF5B4 /* AddColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB268FE29549415007EF5B4 /* AddColor.swift */; };
 		BFB26921295C2DE1007EF5B4 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB26920295C2DE1007EF5B4 /* Constant.swift */; };
 		BFB26926295C69EE007EF5B4 /* ColorValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB26925295C69EE007EF5B4 /* ColorValue.swift */; };
+		BFEAF52629642A83006FA83A /* EditColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEAF52529642A83006FA83A /* EditColorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF19C8572962C13000CBAE21 /* ColorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailView.swift; sourceTree = "<group>"; };
 		BFB268E02954637C007EF5B4 /* ColorPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB268E32954637C007EF5B4 /* ColorPickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerApp.swift; sourceTree = "<group>"; };
 		BFB268E52954637C007EF5B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +36,7 @@
 		BFB268FE29549415007EF5B4 /* AddColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddColor.swift; sourceTree = "<group>"; };
 		BFB26920295C2DE1007EF5B4 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		BFB26925295C69EE007EF5B4 /* ColorValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorValue.swift; sourceTree = "<group>"; };
+		BFEAF52529642A83006FA83A /* EditColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditColorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +95,9 @@
 			isa = PBXGroup;
 			children = (
 				BFB268F92954904D007EF5B4 /* HomeView.swift */,
+				BFEAF52529642A83006FA83A /* EditColorView.swift */,
 				BFB268FE29549415007EF5B4 /* AddColor.swift */,
+				BF19C8572962C13000CBAE21 /* ColorDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,6 +201,8 @@
 				BFB26926295C69EE007EF5B4 /* ColorValue.swift in Sources */,
 				BFB268FD2954930B007EF5B4 /* ColorViewModel.swift in Sources */,
 				BFB26921295C2DE1007EF5B4 /* Constant.swift in Sources */,
+				BFEAF52629642A83006FA83A /* EditColorView.swift in Sources */,
+				BF19C8582962C13000CBAE21 /* ColorDetailView.swift in Sources */,
 				BFB268F02954637D007EF5B4 /* ColorPicker.xcdatamodeld in Sources */,
 				BFB268FA2954904D007EF5B4 /* HomeView.swift in Sources */,
 				BFB268E62954637C007EF5B4 /* ContentView.swift in Sources */,

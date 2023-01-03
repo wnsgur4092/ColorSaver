@@ -11,7 +11,8 @@ import CoreData
 class ColorViewModel: ObservableObject {
     
     //MARK: - NEW COLOR PROPERTIES
-    @Published var openEditColor : Bool = false
+    @Published var openAddColorView : Bool = false
+    @Published var openEditColorView : Bool = false
 //    @Published var colorCode : String = ""
 //    @Published var preferredName : String = ""
 //    

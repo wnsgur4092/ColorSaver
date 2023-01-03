@@ -55,7 +55,7 @@ struct AddColor: View {
                 print(colorVM.drawHexNumber)
                 print(colorVM.drawUIColor)
                 addItem()
-                colorVM.openEditColor.toggle()
+                colorVM.openAddColorView.toggle()
             } label: {
                 Label {
                     Text("Save Color")
