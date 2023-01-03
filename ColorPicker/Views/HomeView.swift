@@ -30,6 +30,7 @@ struct HomeView: View {
                         .overlay{
                             Rectangle()
                                 .fill(Color(UIColor(red:CGFloat(item.red),green:CGFloat(item.green),blue:CGFloat(item.blue),alpha:CGFloat(item.alpha))))
+  
                                 .onTapGesture {
                                     colorVM.openEditColorView.toggle()
                                 }
@@ -48,6 +49,7 @@ struct HomeView: View {
                             }
                         }
                         .frame(height:110)
+                        .cornerRadius(20)
                     
                 } //: ForEach
             } //: VSTACK
